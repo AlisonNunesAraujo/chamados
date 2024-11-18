@@ -1,0 +1,27 @@
+.headerGruop{
+    width: 100%;
+    height: 70px;
+    background-color: rgba(19, 17, 17, 0.635);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.nav{
+    display: flex;
+    gap: 40px;
+}
+
+.LinkMenu{
+    text-decoration: none;
+    background-color: black;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 10px rgb(17, 16, 16);
+    transition: 500ms ;
+    color: white;
+}
+
+.LinkMenu:hover{
+    background-color: rgba(184, 234, 243, 0.559);
+}

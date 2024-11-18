@@ -1,0 +1,84 @@
+.cont{
+    height: 100%;
+    background-color: bisque;
+    
+    
+}
+.grupo{
+    border: 0px 5px 5px;
+}
+
+.headerPerfil{
+    width: 100%;
+    transition: 500ms;
+    display: flex;
+    justify-content: center;
+
+   
+}
+
+.titlePerfil{
+    font-size: 30px;
+    color: rgba(72, 48, 39, 0.55);
+    font-weight: bold;
+    box-shadow: 0px 5px 5px;
+    border-radius: 10px;
+    transition: 500ms;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.inputsLabel{
+    width: 30%;
+    padding: 10px;
+    margin-left: 20px;
+    border: 0;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.labelText{
+    margin-left: 30px;
+    font-size: 20px;
+
+}
+
+.bntSalvar{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    padding: 20px;
+    justify-content: space-around;
+}
+.bntSlv{
+    width: 40%;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 13px;
+    background-color: darkred;
+    color: white;
+    font-weight: 500;
+    transition: 500ms;
+
+}
+
+.titlePerfil:hover{
+    background-color: rgb(60, 56, 56);
+    color: white;
+    font-size: 40px;
+}
+
+
+.bntSlv:hover{
+    background-color: black;
+    
+}

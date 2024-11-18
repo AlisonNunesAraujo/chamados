@@ -1,0 +1,52 @@
+.index{
+    background-color: rgb(83, 78, 72);
+    height: 100%;
+
+}
+
+table{
+    width: 100%;
+    background-color: aqua;
+}
+
+table caption{
+    font-size: 1.5rem;
+}
+
+table th, table td{
+    padding: 0.65em;
+    text-align: center;
+}
+
+table th{
+    background-color: blue;
+    border: 1px solid green;
+    font-size: 0.60em;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+}
+
+
+/* @media screen and(max-width: 600px){
+    table{
+        border: 0;
+    }
+
+    table caption{
+        font-size: 1.3rem;
+    }
+    table thead{
+        border: 0;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+    }
+
+    table tr{
+        border: 1px solid black;
+        display: block;
+        margin-bottom: 0.60em;
+    }
+} */
