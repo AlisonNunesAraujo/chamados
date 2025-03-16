@@ -48,6 +48,14 @@ function Rotas() {
           </Private>
         }
       />
+      <Route
+        path="/New/:id"
+        element={
+          <Private>
+            <New />
+          </Private>
+        }
+      />
     </Routes>
   );
 }

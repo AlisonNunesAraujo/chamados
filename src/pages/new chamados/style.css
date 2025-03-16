@@ -1,0 +1,124 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.conteinerNew{
+  background-color:  bisque;
+  height: 100%;
+  width: 100%;
+}
+.formNew {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+@media (max-width: 700px){
+  .conteinerNew{
+    height: 100%;
+    width: 100%;
+  } 
+  
+  .formNew{
+    height: 100%;
+    width: 100%;
+    background-color: blueviolet;
+  }
+  .formulario{
+    height: 90%;
+    width: 80%;
+  }
+  .selectOne{
+    height: 50%;
+    width: 50%;
+    margin-top: 20px;
+  }
+
+  .label{
+    font-size: 10px;
+  }
+  .inputDesc{
+    height: 30px;
+    width: 60%;
+    margin-left: 0;
+  }
+  .bntDesc{
+    width: 30%;
+    height: 20px;
+  }
+}
+
+.title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+    margin-left: 25px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 80%;
+  background-color: rgb(255, 255, 255);
+  margin-left: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px;
+  margin-top: 10px;
+}
+
+.selectOne {
+  height: 40px;
+  border: none;
+  box-shadow: 0px 2px 2px;
+  border-radius: 5px;
+  margin-bottom: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
+
+.optionOne {
+  font-size: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.inputDesc{
+    width: 60%;
+    height: 100px;
+    resize: none;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.descrever{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bntDesc{
+    width: 25%;
+    height: 40px;
+    background-color: rgb(227, 19, 19);
+    font-size: 15px;
+    color: white;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: none;
+    transition: 500ms;
+}
+
+.bntDesc:hover{
+    background-color: rgb(34, 0, 255);
+}

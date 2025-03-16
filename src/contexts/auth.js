@@ -18,11 +18,16 @@ function AuthContexts({ children }) {
 
   const navigate = useNavigate();
 
-  useEffect((email) => {
-    if (renderDados) {
-      setUser(true);
-    }
-  }, []);
+  useEffect(
+    (email) => {
+      const userData = localStorage.getItem("@dadosUser");
+
+      if (userData) {
+        setUser(JSON.parse(userData));
+      }
+    },
+    [renderDados]
+  );
 
   async function Logar(email, senha) {
     try {
@@ -31,7 +36,6 @@ function AuthContexts({ children }) {
         email: email,
       };
       setUser(data);
-      renderDados(data);
       navigate("/Home");
     } catch (err) {
       alert("erro");
@@ -51,13 +55,11 @@ function AuthContexts({ children }) {
       });
 
       const data = {
-       
         email: value.user.email,
       };
 
       setUser(data);
-      renderDados(data)
-      
+      renderDados(data);
     } catch (err) {
       console.log(err);
     } finally {
@@ -65,8 +67,9 @@ function AuthContexts({ children }) {
     }
   }
 
-   function renderDados(data) {
+  function renderDados(data) {
     localStorage.setItem("@dadosUser", JSON.stringify(data));
+    console.log(data);
   }
 
   return (

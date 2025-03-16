@@ -1,18 +1,74 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
+import Modal from "../../components/Modal";
+import "./style.css";
 
-import "./home.css";
+import { useEffect, useState } from "react";
+import { format } from "date-fns";
+import { db } from "../../firebase/firebaseConection";
+import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
+
+const listRef = collection(db, "chamados");
 
 function Home() {
+  const [chamados, setChamados] = useState([]);
+  const [showmodal, setShowmodal] = useState(false);
+  const [detail, setDetail] = useState("");
+
+  useEffect(() => {
+    async function LoadChamados() {
+      const q = query(listRef, orderBy("created", "desc"));
+
+      const queryRef = await getDocs(q);
+      setChamados([]);
+      await Update(queryRef);
+    }
+    LoadChamados();
+
+    return () => {};
+  }, []);
+
+  async function Update(queryRef) {
+    let lista = [];
+
+    queryRef.forEach((doc) => {
+      lista.push({
+        id: doc.id,
+        assunto: doc.data().assunto,
+        cliente: doc.data().cliente,
+        clienteId: doc.data().clienteId,
+        createdFormat: format(doc.data().created.toDate(), "dd/MM/yyyy"),
+        status: doc.data().status,
+        complemento: doc.data().complemento,
+      });
+    });
+
+    setChamados((chamados) => [...chamados, ...lista]);
+  }
+
+  function feacharModal(item) {
+    setShowmodal(!showmodal);
+    setDetail(item);
+  }
+
   return (
     <div className="index">
       <div>
         <Header />
+        <h1 className="titleHome">Sua Tabela</h1>
       </div>
 
-      <h1>Home</h1>
+      <div className="buttonNew">
+          <button className="bntNovoChamado">
+            <Link to="/New" className="textbnt">
+              {" "}
+              Novo Chamado
+            </Link>
+          </button>
+        </div>
 
       <div className="tt">
+      
         <table>
           <thead>
             <tr>
@@ -24,36 +80,37 @@ function Home() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td data-label="Clientes">Maria</td>
-              <td data-label="Assunto">trampo</td>
-              <td>Em aberto</td>
-              <td>Hoje</td>
-              <td>
-                <button>Buscar</button>
-                <button>editar</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td data-label="Clientes">Maria</td>
-              <td data-label="Assunto">trampo</td>
-              <td>Em aberto</td>
-              <td>Hoje</td>
-              <td>
-                <button>Buscar</button>
-                <button>editar</button>
-              </td>
-            </tr>
+            {chamados.map((item, index) => {
+              return (
+                <tr key={index}>
+                  <td data-label="Clientes">{item.cliente}</td>
+                  <td data-label="Assunto">{item.assunto}</td>
+                  <td>{item.status}</td>
+                  <td>{item.createdFormat}</td>
+                  <td>
+                    <Link to={`/new/${item.id}`} className="bntEditar">
+                      Editar
+                    </Link>
+                    <button
+                      onClick={() => feacharModal(item)}
+                      className="bntBuscar"
+                    >
+                      Buscar
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
+        
         </table>
 
-        <div>
-            <button >
-                <Link to="/New"> Novo</Link>
-            </button>
-        </div>
+        
       </div>
+
+      {showmodal && (
+        <Modal conteudo={detail} close={() => setShowmodal(!showmodal)} />
+      )}
     </div>
   );
 }

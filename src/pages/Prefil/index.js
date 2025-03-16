@@ -25,7 +25,7 @@ export default function Perfil() {
           className="inputsLabel"
         />
         <div className="bntSalvar">
-            <button  className="bntSlv">Sair</button>
+            <button  className="bntSair">Sair</button>
         </div>
 
         

@@ -4,7 +4,7 @@ import "./style.css";
 export default function Header() {
   return (
     <div className="headerGruop">
-      <h2>Header</h2>
+      <h2 className="titleHeader">Bem Vindo!</h2>
 
       <nav className="nav">
         <h3>

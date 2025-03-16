@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "../../components/Header";
-import './clientes.css'
+import './style.css'
 
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConection";

@@ -1,41 +1,200 @@
+import { useContext, useEffect, useState } from "react";
 import Header from "../../components/Header";
+import "./style.css";
+import { useParams } from "react-router-dom";
+import { db } from "../../firebase/firebaseConection";
+import {
+  getDoc,
+  getDocs,
+  collection,
+  addDoc,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 
-import "./new.css";
+import { AuthProvider } from "../../contexts/auth";
+
+const list = collection(db, "clientes");
 
 export default function New() {
+  const { id } = useParams();
+
+  const { user } = useContext(AuthProvider);
+
+  const [custemers, setCustemers] = useState([]);
+  const [selected, setSelected] = useState(0);
+  const [complemento, setComplento] = useState("");
+  const [status, setStatus] = useState("aberto");
+  const [assunto, setAssunto] = useState("");
+  const [idCustumers, setIdCustumers] = useState(false);
+
+  useEffect(() => {
+    async function TrazerLista() {
+      const query = await getDocs(list)
+        .then((snapshot) => {
+          let lista = [];
+
+          snapshot.forEach((doc) => {
+            lista.push({
+              id: doc.id,
+              nomeFantasia: doc.data().nome,
+            });
+          });
+
+          setCustemers(lista);
+          console.log(setCustemers);
+
+          if (id) {
+            loadId(lista);
+          }
+        })
+        .catch((err) => {
+          alert("erro", err);
+        });
+    }
+
+    TrazerLista();
+  }, [id]);
+
+  async function loadId(lista) {
+    const docRef = doc(db, "chamados", id);
+    await getDoc(docRef)
+      .then((snapshot) => {
+        setAssunto(snapshot.data().assunto);
+        setComplento(snapshot.data().complemento);
+        setStatus(snapshot.data().status);
+
+        let index = lista.findIndex(
+          (item) => item.id === snapshot.data().clienteId
+        );
+        setSelected(index);
+        setIdCustumers(true);
+      })
+      .catch((err) => {
+        alert(err);
+        setIdCustumers(false);
+      });
+  }
+
+  function Hendle(e) {
+    setStatus(e.target.value);
+  }
+
+  function HendleSelect(e) {
+    setAssunto(e.target.value);
+  }
+
+  function HendleSelected(e) {
+    setSelected(e.target.value);
+  }
+
+  async function handleRegister(e) {
+    e.preventDefault();
+
+    if (idCustumers) {
+      const docRef = doc(db, "chamados", id);
+      await updateDoc(docRef, {
+        created: new Date(),
+        cliente: custemers[selected].nomeFantasia,
+        clienteId: custemers[selected].id,
+        assunto: assunto,
+        complemento: complemento,
+        status: status,
+      }).then(() => {
+        alert("ok");
+      });
+
+      return;
+    }
+
+    //Registrar um chamado
+    await addDoc(collection(db, "chamados"), {
+      created: new Date(),
+      cliente: custemers[selected].nomeFantasia,
+      clienteId: custemers[selected].id,
+      assunto: assunto,
+      complemento: complemento,
+      status: status,
+    })
+      .then(() => {
+        alert("certo");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   return (
-    <div>
+    <div className="conteinerNew">
       <Header />
-      <h1>new</h1>
+      <h1 className="title">Criar Novo</h1>
 
       <div className="formNew">
-        <form className="formulario">
-          <label>Clientes</label>
+        <form className="formulario" onSubmit={handleRegister}>
+          <label className="label">Clientes</label>
 
-          <select className="">
-            <option key={1} value={1}>
-              Teste 1
-            </option>
-            <option key={2} value={2}>
-              Teste 2
-            </option>
+          <select
+            value={selected}
+            onChange={HendleSelected}
+            className="selectOne"
+          >
+            {custemers.map((item, index) => {
+              return (
+                <option key={index} value={index}>
+                  {item.nomeFantasia}
+                </option>
+              );
+            })}
           </select>
 
-          <label>Assunto</label>
-          <select>
-            <option>Suporte</option>
-            <option>Visita tecnica</option>
-            <option>finançeiro</option>
+          <label className="label">Assunto</label>
+          <select className="selectOne" value={assunto} onChange={HendleSelect}>
+            <option className="optionOne">Suporte</option>
+            <option className="optionOne">Visita tecnica</option>
+            <option className="optionOne">finançeiro</option>
           </select>
 
-          <label>Status</label>
-          <div>
-            <input type="radio" name="radio" value="aberto" />{" "}
+          <label className="label">Status</label>
+          <div >
+            <input
+              type="radio"
+              name="radio"
+              value="aberto"
+              onChange={Hendle}
+              className="inputsNew"
+            />{" "}
             <span>Em Aberto</span>
-            <input type="radio" name="radio" value="progresso" />{" "}
+            <input
+              type="radio"
+              name="radio"
+              value="progresso"
+              onChange={Hendle}
+              className="inputsNew"
+            />{" "}
             <span>Progresso</span>
-            <input type="radio" name="radio" value="atendido" />{" "}
+            <input
+              type="radio"
+              name="radio"
+              value="atendido"
+              onChange={Hendle}
+              className="inputsNew"
+            />{" "}
             <span>Atendido</span>
+          </div>
+
+          <h2>Complemento</h2>
+          <div className="descrever">
+            
+
+            <textarea
+              value={complemento}
+              onChange={(e) => setComplento(e.target.value)}
+              placeholder="Descreva"
+              className="inputDesc"
+            />
+            <button className="bntDesc" type="submit">
+              Registrar
+            </button>
           </div>
         </form>
       </div>
