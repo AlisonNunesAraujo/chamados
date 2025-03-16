@@ -6,7 +6,7 @@ export default function Modal({conteudo, close}){
         <div className="contmodal">
             <div className='modal'>
                 <div className='headerModal'>
-                    <button onClick={close} className='bnt'>Fechar</button>
+                    <button onClick={close} className='bntFechar'>Fechar</button>
                     <h3 className='titleModal'>Detalhes</h3>
                 </div>
 

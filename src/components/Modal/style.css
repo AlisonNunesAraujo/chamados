@@ -50,16 +50,15 @@
     font-style: normal;
 }
 
-.bnt{
+.bntFechar{
     padding: 12px;
-    width: 15%;
+    width: 10%;
     margin-left: 20px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
     font-weight: 600;
     transition: 500ms;
-    background-color: black;
-    color: white;
+   
     margin: 20px;
 }

@@ -42,7 +42,6 @@ export default function New() {
           });
 
           setCustemers(lista);
-          console.log(setCustemers);
 
           if (id) {
             loadId(lista);
