@@ -4,11 +4,13 @@ import "./style.css";
 export default function Header() {
   return (
     <div className="headerGruop">
-      <h2 className="titleHeader">Bem Vindo!</h2>
+      <h2 className="titleHeader">Olá,Bem Vindo!</h2>
 
       <nav className="nav">
         <h3>
-          <Link className="LinkMenu" to="/Home">Chamadas</Link>
+          <Link className="LinkMenu" to="/Home">
+            Chamadas
+          </Link>
         </h3>
         <h3>
           <Link className="LinkMenu" to="/Clientes">

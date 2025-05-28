@@ -5,10 +5,11 @@ import { AuthProvider } from "../../contexts/auth";
 import "./style.css";
 
 export default function Perfil() {
-    const{user,}=useContext(AuthProvider)
+  const { user, Sair } = useContext(AuthProvider);
 
-   
-
+  async function LogOut() {
+    Sair();
+  }
 
   return (
     <div className="cont">
@@ -19,16 +20,12 @@ export default function Perfil() {
 
       <div className="form">
         <label className="labelText">Email:</label>
-        <input
-          value={user.email}
-          disabled={true}
-          className="inputsLabel"
-        />
+        <input value={user.email} disabled={true} className="inputsLabel" />
         <div className="bntSalvar">
-            <button  className="bntSair">Sair</button>
+          <button className="bntSair" onClick={LogOut}>
+            Sair
+          </button>
         </div>
-
-        
       </div>
     </div>
   );

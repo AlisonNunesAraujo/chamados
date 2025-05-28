@@ -6,8 +6,6 @@ import {
   signOut,
 } from "firebase/auth";
 
-import { doc, setDoc } from "firebase/firestore";
-
 import { useNavigate } from "react-router-dom";
 
 export const AuthProvider = createContext({});
@@ -43,19 +41,15 @@ function AuthContexts({ children }) {
   }
 
   // Função de registro
-  async function Registrar(nome, email, senha) {
+  async function Registrar(email, senha) {
     setLoading(true);
 
     try {
       const value = await createUserWithEmailAndPassword(auth, email, senha);
-      const uid = value.user.uid;
-
-      await setDoc(doc(db, "users", uid), {
-        nome: nome,
-      });
 
       const data = {
         email: value.user.email,
+        uid: value.user.uid,
       };
 
       setUser(data);
@@ -69,12 +63,18 @@ function AuthContexts({ children }) {
 
   function renderDados(data) {
     localStorage.setItem("@dadosUser", JSON.stringify(data));
-    console.log(data);
+  }
+
+  async function Sair() {
+    await signOut(auth);
+    setUser(null);
+    localStorage.removeItem("@dadosUser");
+    navigate("/");
   }
 
   return (
     <AuthProvider.Provider
-      value={{ signeed: !!user, user, Registrar, loading, Logar }}
+      value={{ signeed: !!user, user, Registrar, loading, Logar, Sair }}
     >
       {children}
     </AuthProvider.Provider>
