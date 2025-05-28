@@ -7,18 +7,6 @@
   justify-content: center;
 }
 
-/* .areaTitle{
-    background-color: rgb(226, 217, 217);
-    width: 30%;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    box-shadow: 0px 5px 6px;
-} */
-
 .login-area {
   width: 30%;
   background-color: rgb(226, 217, 217);
@@ -29,7 +17,6 @@
   justify-content: center;
   align-items: center;
   border-radius: 0px 0px 5px 5px;
-  box-shadow: 0px 4px 6px;
 }
 
 .inputs {

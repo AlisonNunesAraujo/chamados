@@ -9,18 +9,17 @@ export default function SingIn() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const {Logar} = useContext(AuthProvider)
+  const { Logar } = useContext(AuthProvider);
 
-  async function Hendle(e){
-    e.preventDefault()
-    Logar(email,senha)
-    
+  async function Hendle(e) {
+    e.preventDefault();
+    Logar(email, senha);
   }
-  
+
   return (
     <div className="conteiner">
       <form className="login-area">
-      <h1>Entar</h1>
+        <h1>Entrar</h1>
         <input
           className="inputs"
           type="email"
@@ -35,8 +34,12 @@ export default function SingIn() {
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
         />
-        <button className="bntEntrar" onClick={Hendle}>Entrar</button>
-        <Link to="/SingUp" className="textCriar">Criar Conta</Link>
+        <button className="bntEntrar" onClick={Hendle}>
+          Entrar
+        </button>
+        <Link to="/SingUp" className="textCriar">
+          Criar Conta
+        </Link>
       </form>
     </div>
   );
