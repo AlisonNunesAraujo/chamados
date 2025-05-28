@@ -1,46 +1,51 @@
-.grup{
-    height:100%;
-    background-color: bisque;
+.grup {
+  height: 100%;
+  background-color: bisque;
 }
-.titleClientes{
-    font-size: 30px;
-    margin-left: 20px;
-    font-family:  sans-serif;
-    font-weight: 900;
+.titleClientes {
+  font-size: 30px;
+  margin-left: 20px;
+  font-family: sans-serif;
+  font-weight: 900;
 }
-.titleInput{
-    margin-left: 20px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 15px;
-}
-
-.inputsClientes{
-    width: 30%;
-    padding: 15px;
-    background-color: white;
-    color: black;
-    margin-left: 20px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-
+.titleInput {
+  margin-left: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 15px;
 }
 
-.bnt{
-    padding: 12px;
-    width: 15%;
-    margin-left: 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 500ms;
-    background-color: black;
-    color: white;
-    margin: 20px;
+.inputsClientes {
+  width: 30%;
+  padding: 15px;
+  background-color: white;
+  color: black;
+  margin-left: 20px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.areaBnt {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.bnt:hover{
-    background-color: rgb(214, 200, 200);
-    color: rgb(7, 7, 7);
+.bnt {
+  padding: 12px;
+  width: 20%;
+  margin-left: 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 500ms;
+  background-color: black;
+  color: white;
+  margin: 20px;
+}
+
+.bnt:hover {
+  background-color: rgb(214, 200, 200);
+  color: rgb(7, 7, 7);
 }
