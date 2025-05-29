@@ -44,11 +44,13 @@
   }
   .nav {
     display: flex;
-    gap: 40px;
+    gap: 20px;
   }
 
   .titleHeader {
+    font-size: 17px;
     color: white;
+    text-align: center;
   }
 
   .LinkMenu {
@@ -56,9 +58,9 @@
     padding: 0px;
     transition: 500ms;
     color: white;
-    border-radius: 5px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
-    font-size: 20px;
+    font-size: 15px;
+    font-size: 15px;
   }
 }

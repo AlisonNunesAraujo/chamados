@@ -1,14 +1,16 @@
 import SingIn from "./pages/Entrar";
-import {BrowserRouter} from 'react-router-dom'
+import { BrowserRouter } from "react-router-dom";
 
-import Rotas from './routs'
+import Rotas from "./routs";
 import AuthContexts from "./contexts/auth";
+import { ToastContainer } from "react-toastify";
 
 function App() {
-  return(
+  return (
     <BrowserRouter>
       <AuthContexts>
-        <Rotas/>
+        <Rotas />
+        <ToastContainer autoClose={1000} />
       </AuthContexts>
     </BrowserRouter>
   );

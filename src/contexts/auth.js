@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 export const AuthProvider = createContext({});
@@ -35,8 +35,9 @@ function AuthContexts({ children }) {
       };
       setUser(data);
       navigate("/Home");
+      toast.success("Bem Vindo!");
     } catch (err) {
-      alert("erro");
+      toast.error("Algo deu errado!");
     }
   }
 
@@ -54,8 +55,9 @@ function AuthContexts({ children }) {
 
       setUser(data);
       renderDados(data);
+      toast.success("Cadastro realizado com sucesso!");
     } catch (err) {
-      console.log(err);
+      toast.error("Algo deu errado!");
     } finally {
       setLoading(false);
     }
@@ -70,6 +72,7 @@ function AuthContexts({ children }) {
     setUser(null);
     localStorage.removeItem("@dadosUser");
     navigate("/");
+    toast.success("Deslogado com sucesso!");
   }
 
   return (

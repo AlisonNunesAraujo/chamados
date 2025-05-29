@@ -4,7 +4,7 @@ import "./style.css";
 
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConection";
-
+import { toast } from "react-toastify";
 export default function Clientes() {
   const [nome, setNome] = useState("");
   const [cnpj, setCnpj] = useState("");
@@ -12,7 +12,7 @@ export default function Clientes() {
 
   async function RegistrarClientes() {
     if ((nome === "") | (cnpj === "") | (endereço === "")) {
-      alert("digite algo");
+      toast.error("Digite algo!");
       return;
     }
     try {
@@ -22,9 +22,9 @@ export default function Clientes() {
         endereço: endereço,
       });
 
-      alert("tudo certo");
+      toast.success("Cadastro realizado com sucesso!");
     } catch (err) {
-      alert("Algo deu errado");
+      toast.error("Algo deu errado!");
     }
   }
 

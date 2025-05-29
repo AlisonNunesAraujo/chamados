@@ -1,6 +1,6 @@
 .contmodal {
   background-color: rgb(243, 243, 244);
-  width: 50%;
+  width: 70%;
   height: 400px;
   position: fixed;
   z-index: 99;
@@ -15,50 +15,56 @@
   display: flex;
 }
 
-.headerModal{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
+.headerModal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
-.titleModal{
-    font-size: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.titleModal {
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .modal {
-  width: 30%;
+  width: 50%;
   height: auto;
   position: fixed;
   margin: 0 auto;
   top: 15%;
   margin-left: 20px;
+  overflow: hidden;
 }
 
 .div {
+  width: 50%;
   margin: 15px;
+  overflow: hidden;
 }
 
-.text{
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
+.text {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
 }
 
-.textComplemento{
-    font-size: 1.0em;
-    font-style: normal;
+.textComplemento {
+  font-size: 1em;
+  font-style: normal;
 }
 
-.bntFechar{
-    padding: 12px;
-    width: 10%;
-    margin-left: 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 500ms;
-   
-    margin: 20px;
+.bntFechar {
+  padding: 12px;
+  width: 20%;
+  margin-left: 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 500ms;
+  background-color: blue;
+  color: white;
+
+  margin: 20px;
 }

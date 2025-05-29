@@ -82,9 +82,8 @@ table th {
 }
 
 .buttonNew {
-  margin-left: 20px;
-  margin: 30px;
   width: 40%;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 600px) {
@@ -92,6 +91,9 @@ table th {
     width: 100%;
     height: 100%;
     background-color: white;
+  }
+  .titleHome {
+    font-size: 20px;
   }
   table {
     width: 100%;
@@ -120,8 +122,9 @@ table th {
     float: left;
     font-size: 13px;
   }
-  .buttonNew {
-    margin-left: 30px;
-    width: 10%;
+
+  .bntNovoChamado {
+    width: 100%;
+    background-color: blue;
   }
 }

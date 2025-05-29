@@ -13,7 +13,7 @@ import {
 } from "firebase/firestore";
 
 import { AuthProvider } from "../../contexts/auth";
-
+import { toast } from "react-toastify";
 const list = collection(db, "clientes");
 
 export default function New() {
@@ -48,7 +48,7 @@ export default function New() {
           }
         })
         .catch((err) => {
-          alert("erro", err);
+          toast.error("Algo deu errado!");
         });
     }
 
@@ -70,7 +70,7 @@ export default function New() {
         setIdCustumers(true);
       })
       .catch((err) => {
-        alert(err);
+        toast.error("Algo deu errado!");
         setIdCustumers(false);
       });
   }
@@ -89,6 +89,15 @@ export default function New() {
 
   async function handleRegister(e) {
     e.preventDefault();
+    if (
+      assunto === "" ||
+      selected === "" ||
+      complemento === "" ||
+      status === ""
+    ) {
+      toast.error("Preencha todos os campos!");
+      return;
+    }
 
     if (idCustumers) {
       const docRef = doc(db, "chamados", id);
@@ -100,7 +109,7 @@ export default function New() {
         complemento: complemento,
         status: status,
       }).then(() => {
-        alert("ok");
+        toast.success("Chamado atualizado com sucesso!");
       });
 
       return;
@@ -116,10 +125,10 @@ export default function New() {
       status: status,
     })
       .then(() => {
-        alert("certo");
+        toast.success("Chamado criado com sucesso!");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error("Algo deu errado!");
       });
   }
 
@@ -154,7 +163,7 @@ export default function New() {
           </select>
 
           <label className="label">Status</label>
-          <div >
+          <div>
             <input
               type="radio"
               name="radio"
@@ -183,8 +192,6 @@ export default function New() {
 
           <h2>Complemento</h2>
           <div className="descrever">
-            
-
             <textarea
               value={complemento}
               onChange={(e) => setComplento(e.target.value)}
