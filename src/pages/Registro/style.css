@@ -26,8 +26,9 @@
   width: 90%;
   padding: 10px;
   margin: 20px;
-  color: white;
+  color: rgb(0, 0, 0);
   outline: none;
+  background-color: white;
 }
 .bntCriar {
   width: 50%;
@@ -53,6 +54,7 @@
     width: 80%;
   }
   .inputs {
-    color: white;
+    color: rgb(0, 0, 0);
+    background-color: white;
   }
 }

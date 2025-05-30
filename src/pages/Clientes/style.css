@@ -1,13 +1,12 @@
 .grup {
   height: 100%;
-  background-color: bisque;
+  background-color: white;
 }
 .titleClientes {
   font-size: 30px;
   margin-left: 20px;
   font-family: sans-serif;
   font-weight: 900;
-  align-items: center;
 }
 .titleInput {
   margin-left: 20px;
@@ -18,11 +17,12 @@
 .inputsClientes {
   width: 30%;
   padding: 15px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: black;
   border: none;
   border-radius: 5px;
   outline: none;
+  border: 1px solid rgb(67, 56, 56);
 }
 .areaBnt {
   width: 100%;

@@ -28,6 +28,7 @@ function AuthContexts({ children }) {
   );
 
   async function Logar(email, senha) {
+    setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, senha);
       let data = {
@@ -35,10 +36,13 @@ function AuthContexts({ children }) {
       };
       setUser(data);
       navigate("/Home");
+      setLoading(false);
       toast.success("Bem Vindo!");
     } catch (err) {
       toast.error("Algo deu errado!");
+      setLoading(false);
     }
+    setLoading(false);
   }
 
   // Função de registro

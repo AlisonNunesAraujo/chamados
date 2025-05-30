@@ -1,6 +1,6 @@
 .cont {
   height: 100%;
-  background-color: bisque;
+  background-color: white;
 }
 .grupo {
   border: 0px 5px 5px;
@@ -36,6 +36,7 @@
   border: 0;
   border-radius: 5px;
   margin: 20px;
+  border: 1px solid rgb(67, 56, 56);
 }
 
 .labelText {
@@ -85,6 +86,5 @@
     color: white;
     font-weight: 500;
     transition: 500ms;
-    margin-left: 20px;
   }
 }
