@@ -1,12 +1,19 @@
+import "./style.css";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Modal from "../../components/Modal";
-import "./style.css";
 
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { db } from "../../firebase/firebaseConection";
-import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  limit,
+  orderBy,
+  where,
+  query,
+} from "firebase/firestore";
 
 const listRef = collection(db, "chamados");
 
@@ -59,16 +66,15 @@ function Home() {
       </div>
 
       <div className="buttonNew">
-          <button className="bntNovoChamado">
-            <Link to="/New" className="textbnt">
-              {" "}
-              Novo Chamado
-            </Link>
-          </button>
-        </div>
+        <button className="bntNovoChamado">
+          <Link to="/New" className="textbnt">
+            {" "}
+            Novo Chamado
+          </Link>
+        </button>
+      </div>
 
       <div className="tt">
-      
         <table>
           <thead>
             <tr>
@@ -102,10 +108,7 @@ function Home() {
               );
             })}
           </tbody>
-        
         </table>
-
-        
       </div>
 
       {showmodal && (
