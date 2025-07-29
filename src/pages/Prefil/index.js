@@ -15,17 +15,19 @@ export default function Perfil() {
     <div className="cont">
       <Header />
       <div className="headerPerfil">
-        <h2 className="titlePerfil">Meu perfil!</h2>
+        <h2 className="titlePerfil">Meu perfil</h2>
       </div>
 
       <div className="form">
-        <label className="labelText">Email:</label>
+        <div className="areaEmail">
+          <label className="labelText">Email:</label>
         <input value={user.email} disabled={true} className="inputsLabel" />
-        <div className="bntSalvar">
+        </div>
+        
           <button className="bntSair" onClick={LogOut}>
             Sair
           </button>
-        </div>
+        
       </div>
     </div>
   );

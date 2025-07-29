@@ -1,4 +1,3 @@
-import SingIn from "./pages/Entrar";
 import { BrowserRouter } from "react-router-dom";
 
 import Rotas from "./routs";

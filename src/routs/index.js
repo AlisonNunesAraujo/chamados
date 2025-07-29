@@ -1,7 +1,7 @@
 import { Route, Router, Routes } from "react-router-dom";
 
-import SingIn from "../pages/Entrar";
-import SingUp from "../pages/Registro";
+import SingIn from "../pages/login";
+import SingUp from "../pages/register";
 
 import Home from "../pages/Home";
 import Perfil from "../pages/Prefil";

@@ -20,9 +20,8 @@ export default function SingUp() {
 
   return (
     <div className="conteiner">
-      <form className="areaForm">
-        <h1 className="title">Crie a sua conta!</h1>
-
+      <form className="login-area">
+        <h1>Criar sua conta</h1>
         <input
           className="inputs"
           type="email"
@@ -37,14 +36,24 @@ export default function SingUp() {
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
         />
-        <button className="bntCriar" onClick={createUser}>
-          {loading ? "cadastrando..." : "Cadastrar"}
-        </button>
-
-        <Link to="/" className="textVoltar">
-          Voltar
+        {loading ? (
+          <button className="bntEntrar">Craindo...</button>
+        ) : (
+          <button className="bntEntrar" onClick={createUser}>
+            Criar conta
+          </button>
+        )}
+        <Link to="/" className="textCriar">
+          Já tenho uma conta!
         </Link>
       </form>
+      <div className="imgArea">
+        <img
+          className="imgLogin"
+          src="https://skillstecnologicas.com/wp-content/uploads/2024/08/5-Melhores-Sistemas-de-Chamados-Conheca-Essas-Ferramentas-Poderosas.jpg"
+          alt="Logo do GitHub"
+        />
+      </div>
     </div>
   );
 }

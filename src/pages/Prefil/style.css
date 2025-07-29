@@ -15,49 +15,56 @@
 
 .titlePerfil {
   font-size: 30px;
-  color: rgba(72, 48, 39, 0.55);
+  color: black;
   font-weight: bold;
   border-radius: 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 100px;
+  align-items: center;
+}
+.areaEmail {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
 
 .inputsLabel {
   width: 30%;
   padding: 10px;
-  margin-left: 20px;
   border: 0;
   border-radius: 5px;
   margin: 20px;
   border: 1px solid rgb(67, 56, 56);
+ 
 }
 
 .labelText {
-  margin-left: 30px;
   font-size: 20px;
 }
 
 .bntSair {
-  width: 100%;
+  width: 20%;
+  height: 50px;
   padding: 10px;
   border: 0;
   border-radius: 5px;
-  font-size: 13px;
   background-color: darkred;
   color: white;
-  font-weight: 500;
   transition: 500ms;
-  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.bntSlv:hover {
+.bntSair:hover {
   background-color: black;
 }
 
@@ -76,15 +83,18 @@
   .form {
     margin-top: 20px;
   }
-  .bntSair {
-    width: 100%;
-    padding: 10px;
-    border: 0;
-    border-radius: 5px;
-    font-size: 13px;
-    background-color: darkred;
-    color: white;
-    font-weight: 500;
-    transition: 500ms;
-  }
+ .bntSair {
+  width: 80%;
+  height: 50px;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  background-color: darkred;
+  color: white;
+  transition: 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 }

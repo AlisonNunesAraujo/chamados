@@ -60,16 +60,15 @@ function Home() {
 
   return (
     <div className="index">
-      <div>
-        <Header />
-        <h1 className="titleHome">Sua Tabela</h1>
-      </div>
+      <Header />
+
+      <h1 className="titleHome">Sua Tabela</h1>
 
       <div className="buttonNew">
         <button className="bntNovoChamado">
           <Link to="/New" className="textbnt">
             {" "}
-            Novo Chamado
+            Novo chamado
           </Link>
         </button>
       </div>

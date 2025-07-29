@@ -19,7 +19,7 @@ export default function SingIn() {
   return (
     <div className="conteiner">
       <form className="login-area">
-        <h1>Entrar</h1>
+        <h1>Acessar conta</h1>
         <input
           className="inputs"
           type="email"
@@ -42,9 +42,16 @@ export default function SingIn() {
           </button>
         )}
         <Link to="/SingUp" className="textCriar">
-          Criar Conta
+          Criar conta
         </Link>
       </form>
+      <div className="imgArea">
+        <img
+          className="imgLogin"
+          src="https://skillstecnologicas.com/wp-content/uploads/2024/08/5-Melhores-Sistemas-de-Chamados-Conheca-Essas-Ferramentas-Poderosas.jpg"
+          alt="Logo do GitHub"
+        />
+      </div>
     </div>
   );
 }
