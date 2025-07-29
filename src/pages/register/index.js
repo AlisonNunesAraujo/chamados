@@ -12,6 +12,7 @@ export default function SingUp() {
   const navigate = useNavigate();
 
   function createUser(e) {
+    e.preventDefault();
     if (email !== "" && senha !== "") {
       Registrar(email, senha);
     }

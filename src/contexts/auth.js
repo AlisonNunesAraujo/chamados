@@ -60,6 +60,7 @@ function AuthContexts({ children }) {
       setUser(data);
       renderDados(data);
       toast.success("Cadastro realizado com sucesso!");
+      navigate("/");
     } catch (err) {
       toast.error("Algo deu errado!");
     } finally {

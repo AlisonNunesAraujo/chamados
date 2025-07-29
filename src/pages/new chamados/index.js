@@ -196,6 +196,7 @@ export default function New() {
               value={complemento}
               onChange={(e) => setComplento(e.target.value)}
               placeholder="Descreva"
+              maxLength={100}
               className="inputDesc"
             />
             <button className="bntDesc" type="submit">
