@@ -37,7 +37,7 @@
 }
 
 .inputsLabel {
-  width: 30%;
+  width: 50%;
   padding: 10px;
   border: 0;
   border-radius: 5px;
@@ -95,6 +95,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.areaEmail {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.inputsLabel {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  margin: 20px;
+  border: 1px solid rgb(238, 2, 2);
+ 
 }
 
 }
