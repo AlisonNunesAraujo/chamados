@@ -6,3 +6,5 @@
 ![foto do painel](https://github.com/AlisonNunesAraujo/chamados/blob/main/assets/dash.jpg)
 
 ![foto de clientes](https://github.com/AlisonNunesAraujo/chamados/blob/main/assets/clientes2.jpg)
+
+![foto de clientes](https://github.com/AlisonNunesAraujo/chamados/blob/main/assets/clientes.jpg)
