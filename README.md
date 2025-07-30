@@ -3,6 +3,6 @@
 
 ![foto de login](https://github.com/AlisonNunesAraujo/chamados/blob/main/assets/login.jpg)
 
-![foto do painel]()
+![foto do painel](https://github.com/AlisonNunesAraujo/chamados/blob/main/assets/dash.jpg)
 
 ![foto de clientes]()
