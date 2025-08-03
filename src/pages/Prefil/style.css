@@ -107,13 +107,20 @@
 
 
 .inputsLabel {
-  width: 100%;
+  width: 70%;
   padding: 10px;
   border: 0;
   border-radius: 5px;
   margin: 20px;
   border: 1px solid rgb(238, 2, 2);
+  background-color: blue;
  
+}
+
+.labelText {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
 }
 
 }
